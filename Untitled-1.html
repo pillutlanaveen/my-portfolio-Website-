@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    {% load static %}
+    <link rel="icon" href="{% static 'images/icon.png' %}" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Righteous&display=swap" rel="stylesheet">
+    <style>
+        body { background: url("{% static 'bg.jpg' %}") no-repeat center center fixed; background-size: cover; }
+        .container { background-color: white; padding: 50px; border-radius: 10px; }
+        #title { font-family: 'Fredoka One', cursive; color: #FF0000; }
+        .btn-primary, .btn-success { width: 100%; margin-top: 10px; }
+        .img-fluid { max-height: 400px; object-fit: cover; }
+    </style>
+</head>
+<body>
+<div class="container-fluid py-5">
+    <div class="container">
+        <h2 id="title" class="text-center">Campus Placements Prediction & Analysis</h2>
+        <p class="text-center text-muted">Classification, Decision Tree, Random Forest</p>
+        <hr>
+        <div class="row">
+            <!-- Image Section -->
+            <div class="col-md-6 text-center">
+                <img src="{% static 'login.jpg' %}" alt="Login Illustration" class="img-fluid">
+            </div>
+
+            <!-- Login Form Section -->
+            <div class="col-md-6">
+                <form method="POST">
+                    {% csrf_token %}
+                    <fieldset>
+                        <legend class="h4 text-center">Login</legend>
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" id="username" name="username" class="form-control" placeholder="User Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+                        </div>
+                        <button type="submit" class="btn btn-md btn-primary">Sign In</button>
+                    </fieldset>
+                    <hr>
+                    <a href="{% url 'serviceproviderlogin' %}" class="btn btn-lg btn-primary">SERVICE PROVIDER</a>
+                    <a href="{% url 'Register1' %}" class="btn btn-lg btn-success">REGISTER</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
